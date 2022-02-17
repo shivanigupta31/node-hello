@@ -29,3 +29,9 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+    - run: npm pack
+    
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-package
+        path: ./AspNetCoreWithPipeline/bin/Debug/AspNetCoreWithPipeline.1.0.0.nupkg
